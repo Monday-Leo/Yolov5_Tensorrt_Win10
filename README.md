@@ -70,7 +70,7 @@ python gen_wts.py -w yolov5s.pt -o yolov5s.wts
 
 3、我的电脑->属性->高级系统设置->环境变量，在系统变量中找到Path（如没有，自行创建），并双击编辑，将TensorRT/lib路径填入并保存，如`G:\c++\TensorRT-8.2.1.8\lib`
 
-打开本仓库的**CMakeLists.txt**，修改**Opencv**、**Tensorrt**、**dirent.h**的目录，**其中dirent.h在本仓库的include中**，须**绝对路径**。修改`arch=compute_75;code=sm_75`，参考https://developer.nvidia.com/zh-cn/cuda-gpus，我的GPU为GTX1650，计算能力7.5，所以这边设置为`arch=compute_75;code=sm_75`。
+打开本仓库的**CMakeLists.txt**，修改**Opencv**、**Tensorrt**、**dirent.h**的目录，**其中dirent.h在本仓库的include中**，须**绝对路径**。修改`arch=compute_75;code=sm_75`，参考[https://developer.nvidia.com/zh-cn/cuda-gpus](https://developer.nvidia.com/zh-cn/cuda-gpus)，我的GPU为GTX1650，计算能力7.5，所以这边设置为`arch=compute_75;code=sm_75`。
 
 ```
 cmake_minimum_required(VERSION 2.6)
