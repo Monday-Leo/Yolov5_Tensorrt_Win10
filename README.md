@@ -1,3 +1,6 @@
+## B站视频教程
+[https://www.bilibili.com/video/BV113411J7nk?p=1](https://www.bilibili.com/video/BV113411J7nk?p=1)
+
 ## 项目简介
 
 - 基于**Tensorrt**加速**Yolov5 6.0**
