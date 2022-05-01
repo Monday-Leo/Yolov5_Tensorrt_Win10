@@ -22,7 +22,7 @@
 
 ```
 git clone -b v6.0 https://github.com/ultralytics/yolov5.git
-git clone https://github.com/wang-xinyu/tensorrtx.git
+git clone https://github.com/Monday-Leo/Yolov5_Tensorrt_Win10
 ```
 
 或直接到6.0页面download zip。
@@ -195,7 +195,7 @@ static constexpr int INPUT_W = 640;
 <img src="assets/9.png" width="800">
 </div>
 
-编译成功，没有报错！编译成功会打开build/Release，可以看到生成的exe可执行文件。
+编译成功，没有报错！编译成功后打开build/Release，可以看到生成的exe可执行文件。
 
 <div align="center">
 <img src="assets/10.png" width="800">
