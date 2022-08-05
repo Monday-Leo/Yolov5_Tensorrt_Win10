@@ -7,6 +7,7 @@
 #include "utils.h"
 #include "calibrator.h"
 #include "preprocess.h"
+#include "macros.h"
 
 #define USE_FP16  // set USE_INT8 or USE_FP16 or USE_FP32
 #define DEVICE 0  // GPU id
@@ -464,7 +465,7 @@ typedef struct
 
 }Yolov5TRTContext;
 
-extern "C" __declspec(dllexport) void* Init(char *model_path)
+extern "C" API void* Init(char *model_path)
 {
 	cudaSetDevice(DEVICE);
 	// create a model using the API directly and serialize it to a stream
@@ -509,7 +510,7 @@ extern "C" __declspec(dllexport) void* Init(char *model_path)
 }
 
 
-extern "C" __declspec(dllexport) void Detect(void *h, int rows, int cols, unsigned char *src_data, float(*res_array)[6])
+extern "C" API void Detect(void *h, int rows, int cols, unsigned char *src_data, float(*res_array)[6])
 {
 	Yolov5TRTContext *trt = (Yolov5TRTContext *)h;
 	cv::Mat img = cv::Mat(rows, cols, CV_8UC3, src_data);
@@ -546,7 +547,7 @@ extern "C" __declspec(dllexport) void Detect(void *h, int rows, int cols, unsign
 	}
 }
 
-extern "C" __declspec(dllexport) void cuda_free(void*h) {
+extern "C" API void cuda_free(void*h) {
 	Yolov5TRTContext *trt = (Yolov5TRTContext *)h;
 	cudaStreamDestroy(trt->stream);
 	CUDA_CHECK(cudaFree(trt->buffers[trt->inputIndex]));
